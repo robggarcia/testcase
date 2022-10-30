@@ -1,38 +1,242 @@
 .App {
-  text-align: center;
+  box-sizing: border-box;
+  margin: 0;
+  margin-left: auto;
+  padding: 0;
+  display: grid;
+  grid-auto-rows: 8vh 92vh;
+  min-width: 600px;
+  background-color: #1b1b1b;
+  color: #dad8d8;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* NAVBAR */
+.navbar {
+  grid-row: 1;
+  display: flex;
+  justify-items: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar h2 {
+  margin-left: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.links {
+  margin-left: auto;
+  margin-right: 50px;
+}
+
+.navbar a {
+  margin-left: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #5aedb5;
+}
+
+.navbar a:hover {
+  color: #ba69f9;
+}
+
+/* HOME */
+.home {
+  grid-row: 2;
+  width: 80vw;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.home h1 {
+  background-color: #1e2234;
+  border-radius: 10px;
+  height: 100px;
+  width: 100%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.home h3 {
+  margin-bottom: -10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home img {
+  width: 400px;
+  border-radius: 20px;
+}
+
+/* LOGIN / REGISTER */
+.login, .register {
+  grid-row: 2;
+  background-color: #1e2234;
+  border-radius: 10px;
+  width: 80vw;
+  margin: 20px auto;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.login a, .register a {
+  margin-left: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #5aedb5;
+  margin-top: 5px;
+}
+
+/* ROUTINES */
+.routines, .my-routines, .detail, .activities {
+  grid-row: 2;
+  width: 80vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.activities {
+  margin-top: 0px;
+}
+
+.single-routine, .activities {
+  height: fit-content;
+}
+
+.routines h1, .my-routines h1, .activities h1 {
+  background-color: #1e2234;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.routines-container {
+  height: 70vh;
+  overflow: auto;
+}
+
+.activities-container {
+  height: 350px;
+  overflow: auto;
+}
+
+.routine {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.routine, .activity {
+  background-color: #1e2234;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+
+.activity {
+  width: 85%;
+}
+
+.routine a {
+  text-decoration: none;
+  color: #5aedb5;
+}
+
+.routine p {
+  margin-top: -10px;
+}
+
+.routine:hover {
+  background-color: #24283e;
+}
+
+.routine .activities h4 {
+  color: #c579f4;
+  margin-right: auto;
+}
+
+.edit-routine {
+  width: 200px;
+  margin-left: 20px;
+  margin-top: -10px;
+}
+
+/* MY ROUTINES */
+.routine-form {
+  margin-top: -30px;
+  margin-bottom: 30px;
+}
+
+.myroutines-container {
+  height: 45vh;
+  overflow: auto;
+}
+
+/* DETAIL */
+.detail {
+  border-radius: 10px;
+  overflow-x: hidden;
+  height: 85vh;
+}
+
+.detail-container {
+  background-color: #1e2234;
+  height: 100%;
+  overflow: auto;
+}
+
+.routine-detail {
+  color: #5aedb5;
+  margin-left: 20px;
+}
+
+.activities-detail, .user-buttons {
+  margin-left: 20px;
+}
+
+.add-activity {
+  width: 200px;
+  margin: auto;
+  margin-top: -10px;
+}
+
+.activities {
+  margin-bottom: 20px;
+}
+
+select {
+  margin-bottom: 5px;
+}
+
+/* ACTIVITIES */
+.activity h3, .activities h4 {
+  color: #c579f4;
+}
+
+.activities h4 {
+  margin-right: auto;
+}
+
+.activities p {
+  color: #dad8d8;
+}
+
+.add-new-activity {
+  margin-top: -30px;
+  margin-bottom: 20px;
 }
