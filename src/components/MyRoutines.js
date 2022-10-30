@@ -33,20 +33,23 @@ const MyRoutines = ({
 
     // create a new routine
     const newRoutine = await createRoutine(token, name, goal, isPublic);
-    console.log("NEW ROUTINE: ", newRoutine);
 
-    // display message to user
-
-    // update routines and display users routines
-    setRoutines([...routines, newRoutine]);
-    setMyRoutines(
-      myRoutines.length > 0 ? [...myRoutines, newRoutine] : [newRoutine]
-    );
-
-    // clear input fields
-    setName("");
-    setGoal("");
-    setIsPublic(false);
+    if (newRoutine.message) {
+      setSuccess(false);
+      setDisplayMessage(`Error: ${newRoutine.message}`);
+    } else {
+      setSuccess(true);
+      setDisplayMessage(`Succes: Routine ${newRoutine.name} created`);
+      // update routines and display users routines
+      setRoutines([...routines, newRoutine]);
+      setMyRoutines(
+        myRoutines.length > 0 ? [...myRoutines, newRoutine] : [newRoutine]
+      );
+      // clear input fields
+      setName("");
+      setGoal("");
+      setIsPublic(false);
+    }
   };
 
   const handleName = (e) => {
