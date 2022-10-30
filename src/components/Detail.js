@@ -202,10 +202,10 @@ const Detail = ({
             )}
             <p className="routine-detail">Goal: {singleRoutine.goal}</p>
             <p className="routine-detail">
-              Creator:{" "}
-              {singleRoutine.creatorName
+              Creator: {singleRoutine.creatorName}
+              {/* {singleRoutine.creatorName
                 ? singleRoutine.creatorName
-                : user.username}
+                : user.username} */}
             </p>
             {user && singleRoutine.creatorId === user.id ? (
               <div className="user-buttons">
@@ -218,7 +218,7 @@ const Detail = ({
             <div className="activities-detail">
               <div className="activities">
                 <h4>ACTIVITIES:</h4>
-                {singleRoutine.creatorId === user.id ? (
+                {token && singleRoutine.creatorId === user.id ? (
                   <div className="add-activity">
                     <form
                       onSubmit={
@@ -273,7 +273,7 @@ const Detail = ({
                           <p>Description: {activity.description}</p>
                           <p>Count: {activity.count}</p>
                           <p>Duration: {activity.duration}</p>
-                          {singleRoutine.creatorId === user.id ? (
+                          {token && singleRoutine.creatorId === user.id ? (
                             <div className="user-buttons">
                               <button
                                 onClick={() => {
